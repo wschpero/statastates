@@ -10,7 +10,7 @@ statastates is a simple Stata module for adding U.S. state identifiers (abbrevia
 
 **SSC Archive**: Run the code below via the Stata command line. [PENDING SUBMISSION TO SSC]
 	
-	ssc install statapush, replace
+	ssc install statastates, replace
 
 **Github (for Stata v13.1+)**: Run the code below via the Stata command line.
 
@@ -18,16 +18,16 @@ statastates is a simple Stata module for adding U.S. state identifiers (abbrevia
 
 **Github (for Stata v12.1+)**: [Download](https://github.com/wschpero/statastates/archive/master.zip) the files above. Run the code below via the Stata command line, inserting the directory where you saved the files.
 
-	net install statapush, from(<LOCAL PATH TO FILES>) replace
+	net install statastates, from(<LOCAL PATH TO FILES>) replace
 
-###Using statapush
+###Using statastates
 
 statastates is pretty easy to use. Just run the command below and indicate which kind of variable you would like to use to merge the state identifiers. The options include state abbreviation (specify state_abbrev), state name (specify state_name), or state FIPS code (use state_fips).
 
-	statapush, identifier(state_abbrev)
+	statastates, identifier(state_abbrev)
 
 Note that the name of the variable you are using for the merge in your master dataset must match the relevant variable in the statastates "using" dataset (i.e., state_abbrev, state_name, or state_fips).
 
 ###Bug Reports
 
-Please [let me know](https://github.com/wschpero/statapush/issues) if you encounter any issues. Enjoy!
+Please [let me know](https://github.com/wschpero/statastates/issues) if you encounter any issues. Enjoy!
