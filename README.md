@@ -4,7 +4,7 @@ statastates is a simple Stata module for adding U.S. state identifiers (abbrevia
 
 ###Prerequisites
 
-1. **Stata**: statastates should be compatible with Stata v12.1+. While it may be compatible with earlier versions, it has not been tested in those environments.
+**Stata**: statastates should be compatible with Stata v12.1+. While it may be compatible with earlier versions, it has not been tested in those environments.
 
 ###Installation Options
 
