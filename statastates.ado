@@ -15,6 +15,7 @@ program define statastates
 	if "`abbreviation'" != "" {
 	local abbrev "`abbreviation'"
 	rename `abbrev' state_abbrev
+	replace state_abbrev=upper(state_abbrev)
 	quietly findfile statastates.dta
 	merge m:1 state_abbrev using "`r(fn)'"
 	rename state_abbrev `abbrev'
@@ -31,6 +32,7 @@ program define statastates
 	if "`name'" != "" {
 	local name "`name'"
 	rename `name' state_name
+	replace state_name=upper(state_name)
 	quietly findfile statastates.dta
 	merge m:1 state_name using "`r(fn)'"
 	rename state_abbrev `name'
