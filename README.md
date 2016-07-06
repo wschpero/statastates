@@ -22,11 +22,19 @@ statastates is a simple Stata module for adding U.S. state identifiers (abbrevia
 
 ###Using statastates
 
-statastates is pretty easy to use. Just run the command below and indicate which kind of variable you would like to use to merge the state identifiers. The options include state abbreviation (specify state_abbrev), state name (specify state_name), or state FIPS code (use state_fips).
+statastates is pretty easy to use. Just run the command and include the relevant option, which is contingent on whether you would like to merge using the two-letter state abbreviation, FIPS code, or name.
 
-	statastates, identifier(state_abbrev)
+For example, if you have the state abbreviations in your dataset under the variable "state" and want to merge state FIPS codes and names using that variable, enter the following:
 
-Note that the name of the variable you are using for the merge in your master dataset must match the relevant variable in the statastates "using" dataset (i.e., state_abbrev, state_name, or state_fips).
+	statastates, abbreviation(state)
+
+If you have the state FIPS codes in your dataset under the variable "state" and want to merge state abbreviations and names using that variable, enter the following:
+
+	statastates, fips(state)
+
+Lastly, if you have the state names in your dataset under the variable "state" and want to merge state abbreviations and FIPS codes using that variable, enter the following:
+
+	statastates, name(state)
 
 ###Bug Reports
 

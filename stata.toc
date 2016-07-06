@@ -3,7 +3,7 @@ d statastates: Stata module for merging U.S. state identifiers
 d
 d Requires: Stata version 12.1+
 d
-d Distribution-Date: 070116
+d Distribution-Date: 070616
 d
 d Authors: William L. Schpero
 d Contact: william.schpero@yale.edu

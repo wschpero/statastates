@@ -6,27 +6,39 @@
 
 {title: Syntax}
 
-{p 4 8}{cmd:statastates}, {cmdab:i:dentifier}({it:string})
+{p 4 8}{cmd:statastates}, [{cmdab:a:bbreviation}({it:string}) {cmdab:f:ips}({it:string}) {cmdab:n:ame}({it:string})]
 
 {title: Description}
 
-{p 4 8}{cmd:statastates} is a simple Stata module for adding U.S. state identifiers (abbreviation, name, and FIPS code) that may be missing from your dataset.
+{p 4 8}{cmd:statastates} is a simple Stata module for adding U.S. state identifiers (abbreviation, FIPS code, and name) that may be missing from your dataset.
 
 {p 4 8}{cmd:statastates} is compatible with Stata v12.1+. While it may be compatible with earlier versions, it has not been tested in those environments.
 
 {title: Options}
 
-{p 4 8}{bf:Note:} The argument below is required.
+{p 4 8}{bf:Note:} Make sure to include one of the following arguments:
 
-{p 4 8}{cmdab:i:dentifier}({it:string}) Use this option to indicate whether you would like to merge the state identifiers using the state abbreviation (specify state_abbrev), state name (specify state_name), or state FIPS code (use state_fips).
+{p 4 8}{cmdab:A:bbreviation}({it:string}) Use this option if you would like to merge using the two-letter state abbreviation and to specify the relevant variable name in your master dataset.
+
+{p 4 8}{cmdab:F:ips}({it:string}) Use this option if you would like to merge using the one or two-digit state FIPS code and to specify the relevant variable name in your master dataset.
+
+{p 4 8}{cmdab:N:ame}({it:string}) Use this option if you would like to merge using the full state name and to specify the relevant variable name in your master dataset.
 
 {title: Examples}
 
-{p 4 8}statastates is pretty easy to use. Just run the command below and indicate which kind of variable (abbreviation, name, or FIPS code) you would like to use to merge the state identifiers.
+{p 4 8}statastates is pretty easy to use. Just run the command and include the relevant option, which is contingent on whether you would like to merge using the two-letter state abbreviation, FIPS code, or name.
 
-{p 4 8}{cmd:statastates}, {cmdab:i:dentifier}({it:state_abbrev})
+{p 4 8}For example, if you have the state abbreviations in your dataset under the variable "state" and want to merge state FIPS codes and names using that variable, enter the following:
 
-{p 4 8}Note that the name of the variable you are using for the merge in your master dataset must match the relevant variable in the statastates "using" dataset (i.e., state_abbrev, state_name, or state_fips).
+{p 4 8}{cmd:statastates}, {cmdab:a:bbreviation}({it:state})
+
+{p 4 8}If you have the state FIPS codes in your dataset under the variable "state" and want to merge state abbreviations and names using that variable, enter the following:
+
+{p 4 8}{cmd:statastates}, {cmdab:f:ips}({it:state})
+
+{p 4 8}Lastly, if you have the state names in your dataset under the variable "state" and want to merge state abbreviations and FIPS codes using that variable, enter the following:
+
+{p 4 8}{cmd:statastates}, {cmdab:f:ips}({it:state})
 
 {title: Author}
 
