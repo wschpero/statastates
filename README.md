@@ -1,6 +1,6 @@
 # statastates
 
-statastates is a simple Stata module for adding U.S. state identifiers (abbreviation, name, and FIPS code) that may be missing from your dataset.
+statastates is a simple Stata module for adding U.S. state identifiers (abbreviation, FIPS code, and name) that may be missing from your dataset.
 
 ###Prerequisites
 
