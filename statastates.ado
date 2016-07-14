@@ -26,7 +26,7 @@ program define statastates
 	rename `fips' state_fips
 	quietly findfile statastates.dta
 	merge m:1 state_fips using "`r(fn)'"
-	rename state_abbrev `fips'
+	rename state_fips `fips'
 	}
 	
 	if "`name'" != "" {
@@ -35,7 +35,7 @@ program define statastates
 	replace state_name=upper(state_name)
 	quietly findfile statastates.dta
 	merge m:1 state_name using "`r(fn)'"
-	rename state_abbrev `name'
+	rename state_name `name'
 	}
 
 end
