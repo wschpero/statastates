@@ -38,7 +38,7 @@
 
 {p 4 8}Lastly, if you have the state names in your dataset under the variable "state" and want to merge state abbreviations and FIPS codes using that variable, enter the following:
 
-{p 4 8}{cmd:statastates}, {cmdab:f:ips}({it:state})
+{p 4 8}{cmd:statastates}, {cmdab:n:ame}({it:state})
 
 {title: Author}
 
