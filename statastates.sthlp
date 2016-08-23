@@ -18,11 +18,11 @@
 
 {p 4 8}{bf:Note:} Make sure to include one of the following arguments:
 
-{p 4 8}{cmdab:A:bbreviation}({it:string}) Use this option if you would like to merge using the two-letter state abbreviation and to specify the relevant variable name in your master dataset.
+{p 4 8}{cmdab:a:bbreviation}({it:string}) Use this option if you would like to merge using the two-letter state abbreviation and to specify the relevant variable name in your master dataset.
 
-{p 4 8}{cmdab:F:ips}({it:string}) Use this option if you would like to merge using the one or two-digit state FIPS code and to specify the relevant variable name in your master dataset.
+{p 4 8}{cmdab:f:ips}({it:string}) Use this option if you would like to merge using the one or two-digit state FIPS code and to specify the relevant variable name in your master dataset.
 
-{p 4 8}{cmdab:N:ame}({it:string}) Use this option if you would like to merge using the full state name and to specify the relevant variable name in your master dataset.
+{p 4 8}{cmdab:n:ame}({it:string}) Use this option if you would like to merge using the full state name and to specify the relevant variable name in your master dataset.
 
 {title: Examples}
 
