@@ -2,8 +2,8 @@
 statastates: Stata module for merging U.S. state identifiers
 Author: William L. Schpero
 Contact: william.schpero@yale.edu
-Date: 070616
-Version: 1.1
+Date: 021617
+Version: 1.2
 */
 
 capture program drop statastates
@@ -11,13 +11,24 @@ program define statastates
 
     version 12.1
     syntax, [Abbreviation(string) Fips(string) Name(string)]
-		
+	
+	cap quietly findfile statastates.dta, path("`c(sysdir_personal)'statastates_data/")
+
+	if _rc==601 {
+	preserve
+	quietly findfile statastates_data.ado
+	cap import delimited "`r(fn)'", encoding(ISO-8859-1)clear
+	cap mkdir "`c(sysdir_personal)'"
+	cap mkdir "`c(sysdir_personal)'statastates_data"
+	cap save "`c(sysdir_personal)'statastates_data/statastates.dta"
+	restore
+	}
+	
 	if "`abbreviation'" != "" {
 	local abbrev "`abbreviation'"
 	rename `abbrev' state_abbrev
 	replace state_abbrev=upper(state_abbrev)
-	quietly findfile statastates.dta
-	merge m:1 state_abbrev using "`r(fn)'"
+	merge m:1 state_abbrev using "`c(sysdir_personal)'statastates_data/statastates.dta"
 	rename state_abbrev `abbrev'
 	}
 	
@@ -25,7 +36,7 @@ program define statastates
 	local fips "`fips'"
 	rename `fips' state_fips
 	quietly findfile statastates.dta
-	merge m:1 state_fips using "`r(fn)'"
+	merge m:1 state_fips using "`c(sysdir_personal)'statastates_data/statastates.dta"
 	rename state_fips `fips'
 	}
 	
@@ -34,7 +45,7 @@ program define statastates
 	rename `name' state_name
 	replace state_name=upper(state_name)
 	quietly findfile statastates.dta
-	merge m:1 state_name using "`r(fn)'"
+	merge m:1 state_name using "`c(sysdir_personal)'statastates_data/statastates.dta"
 	rename state_name `name'
 	}
 
