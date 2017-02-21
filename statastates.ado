@@ -16,8 +16,9 @@ program define statastates
 
 	if _rc==601 {
 	preserve
+	clear
 	quietly findfile statastates_data.ado
-	cap import delimited "`r(fn)'", encoding(ISO-8859-1)clear
+	cap insheet using "`r(fn)'", tab
 	cap mkdir "`c(sysdir_personal)'"
 	cap mkdir "`c(sysdir_personal)'statastates_data"
 	cap save "`c(sysdir_personal)'statastates_data/statastates.dta"
