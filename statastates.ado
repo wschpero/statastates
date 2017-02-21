@@ -35,7 +35,6 @@ program define statastates
 	if "`fips'" != "" {
 	local fips "`fips'"
 	rename `fips' state_fips
-	quietly findfile statastates.dta
 	merge m:1 state_fips using "`c(sysdir_personal)'statastates_data/statastates.dta"
 	rename state_fips `fips'
 	}
@@ -44,7 +43,6 @@ program define statastates
 	local name "`name'"
 	rename `name' state_name
 	replace state_name=upper(state_name)
-	quietly findfile statastates.dta
 	merge m:1 state_name using "`c(sysdir_personal)'statastates_data/statastates.dta"
 	rename state_name `name'
 	}
