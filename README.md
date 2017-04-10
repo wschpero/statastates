@@ -2,14 +2,14 @@
 
 statastates is a simple Stata module for adding U.S. state identifiers (abbreviation, FIPS code, and name) that may be missing from your dataset.
 
-###Prerequisites
+### Prerequisites
 
 **Stata**: statastates should be compatible with Stata v12.1+. While it may be compatible with earlier versions, it has not been tested in those environments.
 
-###Installation Options
+### Installation Options
 
 **SSC Archive**: Run the code below via the Stata command line.
-	
+
 	ssc install statastates, replace
 
 **Github (for Stata v13.1+)**: Run the code below via the Stata command line.
@@ -20,7 +20,7 @@ statastates is a simple Stata module for adding U.S. state identifiers (abbrevia
 
 	net install statastates, from(<LOCAL PATH TO FILES>) replace
 
-###Using statastates
+### Using statastates
 
 statastates is pretty easy to use. Just run the command and include the relevant option, which is contingent on whether you would like to merge using the two-letter state abbreviation, FIPS code, or name.
 
@@ -36,6 +36,6 @@ Lastly, if you have the state names in your dataset under the variable "state" a
 
 	statastates, name(state)
 
-###Bug Reports
+### Bug Reports
 
 Please [let me know](https://github.com/wschpero/statastates/issues) if you encounter any issues. Enjoy!
