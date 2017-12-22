@@ -36,6 +36,10 @@ Lastly, if you have the state names in your dataset under the variable "state" a
 
 	statastates, name(state)
 
+By default, statastates will generate a new variable, `_merge`, to mark merge results. If you do not want to create this variable (and simply keep matched observations and unmatched master observations), specify the option `nogenerate`.
+
+	statastates, name(state) nogenerate
+
 ### Bug Reports
 
 Please [let me know](https://github.com/wschpero/statastates/issues) if you encounter any issues. Enjoy!
