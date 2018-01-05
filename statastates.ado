@@ -35,14 +35,14 @@ program define statastates
 	rename state_abbrev `abbrev'
 	}
 
-else if "`fips'" != "" {
+  else if "`fips'" != "" {
 	local fips "`fips'"
 	rename `fips' state_fips
 	merge m:1 state_fips using "`c(sysdir_personal)'statastates_data/statastates.dta", nogen keep(match master)
 	rename state_fips `fips'
 	}
 
-else if "`name'" != "" {
+  else if "`name'" != "" {
 	local name "`name'"
 	rename `name' state_name
 	replace state_name=upper(state_name)
@@ -52,7 +52,7 @@ else if "`name'" != "" {
 
   }
 
-else if "`abbreviation'" != "" {
+  else if "`abbreviation'" != "" {
 	local abbrev "`abbreviation'"
 	rename `abbrev' state_abbrev
 	replace state_abbrev=upper(state_abbrev)
@@ -60,14 +60,14 @@ else if "`abbreviation'" != "" {
 	rename state_abbrev `abbrev'
 	}
 
-else if "`fips'" != "" {
+  else if "`fips'" != "" {
 	local fips "`fips'"
 	rename `fips' state_fips
 	merge m:1 state_fips using "`c(sysdir_personal)'statastates_data/statastates.dta"
 	rename state_fips `fips'
 	}
 
-else if "`name'" != "" {
+  else if "`name'" != "" {
 	local name "`name'"
 	rename `name' state_name
 	replace state_name=upper(state_name)
