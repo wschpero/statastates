@@ -44,7 +44,7 @@
 
 {p 4 8}{cmd:statastates}, {cmdab:n:ame}({it:state})
 
-{p 4 8}By default, statastates will generate a new variable, {cmdab:_merge}, to mark merge results. If you do not want to create this variable (and simply keep matched observations and unmatched master observations), specify the option {cmdab:nogen:erate}.
+{p 4 8}By default, statastates will generate a new variable, {cmdab:_merge}, to mark merge results. If you do not want to create this variable, specify {cmdab:nogen:erate}. This will keep matched observations and unmatched master observations.
 
 {p 4 8}{cmd:statastates}, {cmdab:n:ame}({it:state}) {cmdab:nogen:erate}
 
