@@ -1,6 +1,6 @@
 # statastates
 
-statastates is a simple Stata module for adding U.S. state identifiers (abbreviation, FIPS code, and name) that may be missing from your dataset.
+statastates is a simple Stata module for adding U.S. state identifiers (abbreviation, FIPS code, ICPSR code, and name) that may be missing from your dataset.
 
 ### Prerequisites
 
@@ -16,7 +16,7 @@ statastates is a simple Stata module for adding U.S. state identifiers (abbrevia
 
 	net install statastates, from(https://raw.github.com/wschpero/statastates/master/) replace
 
-**Github (for Stata v12.1+)**: [Download](https://github.com/wschpero/statastates/archive/master.zip) the files above. Run the code below via the Stata command line, inserting the directory where you saved the files.
+**Github (for Stata v12.1+)**: [Download](https://github.com/dmockus2/statastates/archive/master.zip) the files above. Run the code below via the Stata command line, inserting the directory where you saved the files.
 
 	net install statastates, from(<LOCAL PATH TO FILES>) replace
 
@@ -32,9 +32,13 @@ If you have the state FIPS codes in your dataset under the variable "state" and 
 
 	statastates, fips(state)
 
-Lastly, if you have the state names in your dataset under the variable "state" and want to merge state abbreviations and FIPS codes using that variable, enter the following:
+If you have the state names in your dataset under the variable "state" and want to merge state abbreviations and FIPS codes using that variable, enter the following:
 
 	statastates, name(state)
+
+Lastly, if you have the state ICPSR codes in your dataset under the variable "state" and want to merge state abbreviations and names using that variable, enter the following:
+
+    statastates, icpsr(state)
 
 By default, statastates will generate a new variable, `_merge`, to mark merge results. If you do not want to create this variable (and simply keep matched observations and unmatched master observations), specify the option `nogenerate`.
 
@@ -42,4 +46,4 @@ By default, statastates will generate a new variable, `_merge`, to mark merge re
 
 ### Bug Reports
 
-Please [let me know](https://github.com/wschpero/statastates/issues) if you encounter any issues. Enjoy!
+Please [let me know](https://github.com/dmockus2/statastates/issues) if you encounter any issues. Enjoy!
