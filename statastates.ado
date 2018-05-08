@@ -18,7 +18,8 @@ program define statastates
 	preserve
 	clear
 	quietly findfile statastates_data.ado
-	cap insheet using "`r(fn)'", tab
+
+cap insheet using "`r(fn)'", tab
 	cap mkdir "`c(sysdir_personal)'"
 	cap mkdir "`c(sysdir_personal)'statastates_data"
 	cap save "`c(sysdir_personal)'statastates_data/statastates.dta"
@@ -28,7 +29,8 @@ program define statastates
   if "`nogenerate'" != "" {
 
 	if "`abbreviation'" != "" {
-	local abbrev "`abbreviation'"	rename `abbrev' state_abbrev
+	local abbrev "`abbreviation'"	
+	rename `abbrev' state_abbrev
 	replace state_abbrev=upper(state_abbrev)
 	merge m:1 state_abbrev using "`c(sysdir_personal)'statastates_data/statastates.dta", nogen keep(match master)
 	rename state_abbrev `abbrev'
