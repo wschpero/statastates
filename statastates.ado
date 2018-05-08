@@ -85,9 +85,9 @@ cap insheet using "`r(fn)'", tab
 	
   else if "`icpsr'" != "" {
 	local icpsr "`icpsr'"
-	rename `icpsr' state_fips
-	merge m:1 icpsr using "`c(sysdir_personal)'statastates_data/statastates.dta"
-	rename state_fips `icpsr'
+	rename `icpsr' state_icpsr
+	merge m:1 state_icpsr using "`c(sysdir_personal)'statastates_data/statastates.dta"
+	rename state_icpsr `icpsr'
 	}
 
 end
