@@ -1,8 +1,8 @@
 /*
 statastates: Stata module for merging U.S. state identifiers
-Authors: William L. Schpero and Domininkas Mockus
-Contact: william.schpero@yale.edu; dmockus2@illinois.edu
-Date: 050719
+Authors: William L. Schpero (Original) and Domininkas Mockus
+Contact: dmockus2@illinois.edu
+Date: 050919
 Version: 2.0
 */
 
