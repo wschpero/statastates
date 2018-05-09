@@ -8,10 +8,6 @@ statastates is a simple Stata module for adding U.S. state identifiers (abbrevia
 
 ### Installation Options
 
-**SSC Archive**: Run the code below via the Stata command line. (Will still give the old version)
-
-	ssc install statastates, replace
-
 **Github (for Stata v13.1+)**: Run the code below via the Stata command line.
 
 	net install statastates, from(https://raw.github.com/dmockus2/statastates/master/) replace
