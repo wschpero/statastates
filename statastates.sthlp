@@ -1,5 +1,5 @@
 {smcl}
-{* 07may2018}
+{* 09may2018}
 {title: Title}
 
 {p 4 8}{cmd:statastates} - Stata module for merging U.S. state identifiers
@@ -56,8 +56,8 @@
 
 {title: Author}
 
-{p 4 4}William L. Schpero and Domininkas Mockus
+{p 4 4}William L. Schpero (Original) and Domininkas Mockus
 
 {title: Contact}
 
-{p 4 4}{browse "mailto:william.schpero@yale.edu":william.schpero@yale.edu}{break}{browse "mailto:dmockus2@illinois.edu":dmockus2@illinois.edu}{break}
+{p 4 4}{browse "mailto:dmockus2@illinois.edu":dmockus2@illinois.edu}{break}
