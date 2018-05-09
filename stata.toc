@@ -1,12 +1,12 @@
-v 3
+v 4
 d statastates: Stata module for merging U.S. state identifiers
 d
 d Requires: Stata version 12.1+
 d
 d Distribution-Date: 050718
 d
-d Authors: William L. Schpero and Domininkas Mockus
-d Contact: william.schpero@yale.edu; dmockus2@illinois.edu
+d Authors: William L. Schpero (Original) and Domininkas Mockus
+d Contact: dmockus2@illinois.edu
 d
 d
 p statastates Stata module for merging U.S. state identifiers
