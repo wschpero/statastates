@@ -1,4 +1,4 @@
-# statastates
+,# statastates
 
 statastates is a simple Stata module for adding U.S. state identifiers (abbreviation, FIPS code, ICPSR code, and name) that may be missing from your dataset. My contribution to William Schpero's code was to add ICPSR functionality.
 
@@ -18,7 +18,7 @@ statastates is a simple Stata module for adding U.S. state identifiers (abbrevia
 
 ### Using statastates
 
-statastates is pretty easy to use. Just run the command and include the relevant option, which is contingent on whether you would like to merge using the two-letter state abbreviation, FIPS code, name or ICPSR code.
+statastates is pretty easy to use. Just run the command and include the relevant option, which is contingent on whether you would like to merge using the two-letter state abbreviation, FIPS code, name, or ICPSR code.
 
 For example, if you have the state abbreviations in your dataset under the variable "state" and want to merge state FIPS codes and names using that variable, enter the following:
 
