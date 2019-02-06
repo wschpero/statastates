@@ -1,4 +1,4 @@
-,# statastates
+# statastates
 
 statastates is a simple Stata module for adding U.S. state identifiers (abbreviation, FIPS code, ICPSR code, and name) that may be missing from your dataset. My contribution to William Schpero's code was to add ICPSR functionality.
 
