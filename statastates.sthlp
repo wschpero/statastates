@@ -1,5 +1,5 @@
 {smcl}
-{* 09may2018}
+{* 06apr2019}
 {title: Title}
 
 {p 4 8}{cmd:statastates} - Stata module for merging U.S. state identifiers
@@ -46,9 +46,13 @@
 
 {p 4 8}{cmd:statastates}, {cmdab:n:ame}({it:state})
 
-{p 4 8}Lastly, if you have the state ICPSR codes in your dataset under the variable "state" and want to merge state abbreviations and names using that variable, enter the following:
+{p 4 8}If you have the state ICPSR codes in your dataset under the variable "state" and want to merge state abbreviations and names using that variable, enter the following:
 
 {p 4 8}{cmd:statastates}, {cmdab:icp:sr}({it:state})
+
+{p 4 8}Lastly, if you have the state codes from the CDC vital statistics in your dataset under the variable "state" and want to merge state abbreviations and names using that variable, enter the following:
+
+{p 4 8}{cmd:statastates}, {cmdab:mort:ality}({it:state})
 
 {p 4 8}By default, statastates will generate a new variable, {cmdab:_merge}, to mark merge results. If you do not want to create this variable, specify {cmdab:nogen:erate}. This will keep matched observations and unmatched master observations.
 
@@ -56,7 +60,7 @@
 
 {title: Author}
 
-{p 4 4}William L. Schpero (Original) and Domininkas Mockus
+{p 4 4}Domininkas Mockus (heavily based on the code by William Schpero)
 
 {title: Contact}
 
