@@ -1,16 +1,16 @@
 /*
 statastates: Stata module for merging U.S. state identifiers
-Authors: William L. Schpero (Original) and Domininkas Mockus
+Authors: Domininkas Mockus (heavily based on the code by William Schpero)
 Contact: dmockus2@illinois.edu
-Date: 050919
-Version: 2.0
+Date: 04062019
+Version: 3.0
 */
 
 capture program drop statastates
 program define statastates
 
     version 12.1
-    syntax, [Abbreviation(string) Fips(string) Name(string) ICPsr(string) NOGENerate]
+    syntax, [Abbreviation(string) Fips(string) Name(string) ICPsr(string) MORTality(string) NOGENerate]
 
 	cap quietly findfile statastates.dta, path("`c(sysdir_personal)'statastates_data/")
 
@@ -57,6 +57,13 @@ cap insheet using "`r(fn)'", tab
 	merge m:1 state_icpsr using "`c(sysdir_personal)'statastates_data/statastates.dta", nogen keep(match master)
 	rename state_icpsr `icpsr'
 	}
+	
+  else if "`mortality'" != "" {
+	local mortality "`mortality'"
+	rename `mortality' state_mort
+	merge m:1 state_mort using "`c(sysdir_personal)'statastates_data/statastates.dta", nogen keep(match master)
+	rename state_mort `mortality'
+	}
 
   }
 
@@ -88,6 +95,13 @@ cap insheet using "`r(fn)'", tab
 	rename `icpsr' state_icpsr
 	merge m:1 state_icpsr using "`c(sysdir_personal)'statastates_data/statastates.dta"
 	rename state_icpsr `icpsr'
+	}
+	
+  else if "`mortality'" != "" {
+	local mortality "`mortality'"
+	rename `mortality' state_mort
+	merge m:1 state_mort using "`c(sysdir_personal)'statastates_data/statastates.dta"
+	rename state_mort `mortality'
 	}
 
 end
