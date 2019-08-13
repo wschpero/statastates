@@ -1,4 +1,4 @@
-v 4
+v 3
 d statastates: Stata module for merging U.S. state identifiers
 d
 d Requires: Stata version 12.1+
