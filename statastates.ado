@@ -22,7 +22,7 @@ program define statastates
 cap insheet using "`r(fn)'", tab
 	cap mkdir "`c(sysdir_personal)'"
 	cap mkdir "`c(sysdir_personal)'statastates_data"
-	cap save "`c(sysdir_personal)'statastates_data/statastates.dta"
+	cap save "`c(sysdir_personal)'statastates_data/statastates.dta", replace
 	restore
 	}
  
