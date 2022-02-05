@@ -40,6 +40,10 @@ By default, statastates will generate a new variable, `_merge`, to mark merge re
 
 	statastates, name(state) nogenerate
 
+### Common Issues
+
+The first time statastates is run, it must create and save a .dta file with the state name / code information to your person .ado directory. If you get an error when you try to use the package along the lines of `file ...Documents/Stata/ado/personal/statastates_data/statastates.dta not found`, that suggests your Stata instance does not have the relevant read-write privileges for that folder. Once you fix those permissions, you should be all set. Otherwise, you can change the directory used for personal .ado files to a path where you know permissions are ok. See [https://kb.iu.edu/d/arur](https://kb.iu.edu/d/arur).
+
 ### Bug Reports
 
 Please [let me know](https://github.com/wschpero/statastates/issues) if you encounter any issues. Enjoy!
