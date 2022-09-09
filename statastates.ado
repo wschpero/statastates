@@ -1,16 +1,16 @@
 /*
 statastates: Stata module for merging U.S. state identifiers
-Author: William L. Schpero
-Contact: william.schpero@yale.edu
-Date: 122217
-Version: 1.3
+Authors: Domininkas Mockus (heavily based on the code by William Schpero)
+Contact: dmockus2@illinois.edu
+Date: 04062019
+Version: 3.0
 */
 
 capture program drop statastates
 program define statastates
 
     version 12.1
-    syntax, [Abbreviation(string) Fips(string) Name(string) NOGENerate]
+    syntax, [Abbreviation(string) Fips(string) Name(string) ICPsr(string) MORTality(string) NOGENerate]
 
 	cap quietly findfile statastates.dta, path("`c(sysdir_personal)'statastates_data/")
 
@@ -18,17 +18,18 @@ program define statastates
 	preserve
 	clear
 	quietly findfile statastates_data.ado
-	cap insheet using "`r(fn)'", tab
+
+cap insheet using "`r(fn)'", tab
 	cap mkdir "`c(sysdir_personal)'"
 	cap mkdir "`c(sysdir_personal)'statastates_data"
-	cap save "`c(sysdir_personal)'statastates_data/statastates.dta"
+	cap save "`c(sysdir_personal)'statastates_data/statastates.dta", replace
 	restore
 	}
-
+ 
   if "`nogenerate'" != "" {
 
 	if "`abbreviation'" != "" {
-	local abbrev "`abbreviation'"
+	local abbrev "`abbreviation'"	
 	rename `abbrev' state_abbrev
 	replace state_abbrev=upper(state_abbrev)
 	merge m:1 state_abbrev using "`c(sysdir_personal)'statastates_data/statastates.dta", nogen keep(match master)
@@ -48,6 +49,20 @@ program define statastates
 	replace state_name=upper(state_name)
 	merge m:1 state_name using "`c(sysdir_personal)'statastates_data/statastates.dta", nogen keep(match master)
 	rename state_name `name'
+	}
+	
+  else if "`icpsr'" != "" {
+	local icpsr "`icpsr'"
+	rename `icpsr' state_icpsr
+	merge m:1 state_icpsr using "`c(sysdir_personal)'statastates_data/statastates.dta", nogen keep(match master)
+	rename state_icpsr `icpsr'
+	}
+	
+  else if "`mortality'" != "" {
+	local mortality "`mortality'"
+	rename `mortality' state_mort
+	merge m:1 state_mort using "`c(sysdir_personal)'statastates_data/statastates.dta", nogen keep(match master)
+	rename state_mort `mortality'
 	}
 
   }
@@ -73,6 +88,20 @@ program define statastates
 	replace state_name=upper(state_name)
 	merge m:1 state_name using "`c(sysdir_personal)'statastates_data/statastates.dta"
 	rename state_name `name'
+	}
+	
+  else if "`icpsr'" != "" {
+	local icpsr "`icpsr'"
+	rename `icpsr' state_icpsr
+	merge m:1 state_icpsr using "`c(sysdir_personal)'statastates_data/statastates.dta"
+	rename state_icpsr `icpsr'
+	}
+	
+  else if "`mortality'" != "" {
+	local mortality "`mortality'"
+	rename `mortality' state_mort
+	merge m:1 state_mort using "`c(sysdir_personal)'statastates_data/statastates.dta"
+	rename state_mort `mortality'
 	}
 
 end
